@@ -11,7 +11,7 @@ output:
   word_document:
     highlight: "tango"
 params: 
-  traits: "no data"
+  trait: "no data"
   treat: "no data"
   rep: "no data"
   data: "no data"

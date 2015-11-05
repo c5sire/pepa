@@ -17,9 +17,9 @@ install.packages("devtools")
 Then type:
 
 ```{r eval=F}
-devtools::install_github(c("reyzaguirre/st4gi", "reyzaguirre/pepa"))
+devtools::install_github("5sire/pepa", dependencies = TRUE)
 ```
-because `pepa` depends on `st4gi`.
+
 
 Usage
 -----
