@@ -37,12 +37,12 @@ meta <- params$meta
 ```
 Author affiliations:
 
-Citation: `r meta$contact` (`r meta$year`). `r meta$title`. Dataset version: 1. Dataset fingerprint (UNF): ASDFHSJKDF525423. Url: http://dataverse.cipotato.org/123456.
+Citation: `r meta$contact` (`r meta$year`). *`r meta$title`*. Dataset version: 1. Dataset fingerprint (UNF): ASDFHSJKDF525423. Url: http://dataverse.cipotato.org/123456.
 
 ```{r}
 # This is an automatedly created report.
 
-# See more details in section on materials
+# See more details in section on materials.
 ```
 
 Alternate formats: 
