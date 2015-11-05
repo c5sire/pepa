@@ -47,10 +47,10 @@ Citation: `r meta$contact` (`r meta$year`). *`r meta$title`*. Dataset version: 1
 
 Alternate formats: 
 
-<a href="rcbd_withchild.pdf" target="_blank">
+<a href="rcbd2_withchild.pdf" target="_blank">
 <img src="PDF.jpg" width = "32" height = "32" alt = "PDF"/>
 </a>
-<a href="rcbd_withchild.docx" target="_blank">
+<a href="rcbd2_withchild.docx" target="_blank">
 <img src="word.png" width = "32" height = "32" alt = "Word"/>
 </a>
 
