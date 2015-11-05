@@ -1,5 +1,5 @@
 ---
-title: "ANOVA for a RCBD trial: `r params$trial`"
+title: "ANOVA for a RCBD trial: `r params$meta$title`"
 author: '`r params$author`'
 date: '`r format(Sys.time(), "%B %d, %Y, %H:%Mh")`'
 output: 
@@ -32,10 +32,17 @@ treat <- params$treat
 rep <- params$rep
 data <- params$data
 maxp <- params$maxp
+meta <- params$meta
 
 ```
+Author affiliations:
+
+Citation: `r meta$contact` (`r meta$year`). `r meta$title`. Dataset version: 1. Dataset fingerprint (UNF): ASDFHSJKDF525423. Url: http://dataverse.cipotato.org/123456.
+
 ```{r}
 # This is an automatedly created report.
+
+# See more details in section on materials
 ```
 
 Alternate formats: 
@@ -47,7 +54,27 @@ Alternate formats:
 <img src="word.png" width = "32" height = "32" alt = "Word"/>
 </a>
 
-# 1. Model specification and data description
+# Abstract
+```{r , echo = FALSE, results='hide'}
+ phs_lbl = "Advanced Trial"
+ if (stringr::str_detect(meta$title, "PT")) {phs_lbl = "Preliminary Trial"}
+ if (stringr::str_detect(meta$title, "OT")) {phs_lbl = "Observation Trial"}
+ brp_lbl = "Yield Breeding Program"
+```
+
+This sweetpotato trial has the identifier `r meta$title`. It was conducted under the supervion of `r meta$contact`  as a `r phs_lbl` as part of a `r brp_lbl` in `r meta$site`, `r meta$country` in `r meta$year`. A total of `r length(meta$materials)` clones (including reference clones) were evaluated for `r meta$variables` traits.
+
+# Materials and Methods
+## Location characterization
+### Installation
+### Geographic and climate characterization
+### Weather during planting season
+### Soil
+### Field management
+### Observations on special events
+## Materials
+## Trait descriptions (from ontology)
+## Model specification and data description
 
 There is data from `r nlevels(as.factor(data[, treat]))` treatments, evaluated using a randomize complete block design with `r nlevels(as.factor(data[, rep]))` blocks. The statistical model is
 $$
@@ -65,7 +92,19 @@ In this model we assume that the errors are independent and have a normal distri
 
 The following traits are analyzed: **`r paste(traits, collapse = ", ")`**
 
-# 2. Trait analyses
+## Computational tools
+```{r, results = 'hide', echo=FALSE}
+s <- sessionInfo()
+```
+
+This report was created using `r s$R.version` on a `r s$platform` running `r s$running` in `r s$locacel`. The following base packages were loaded: 
+**`r paste(unlist(s$basePkgs), collapse = ", ")`** and the following additional packages: 
+**`r paste(names(s$otherPkgs), collapse = ", ")`**.
+
+# Results
+## Raw data
+## Trait summaries
+## Trait analyses
 
 ```{r, echo=FALSE, results='hide'}
 
@@ -90,9 +129,23 @@ The following traits are analyzed: **`r paste(traits, collapse = ", ")`**
 ```{r, include = FALSE}
 out <- NULL
 for (k in 1:length(traits)) {
-  out <- c(out, knit_expand('child_rcbd.Rmd'))
+  out <- c(out, knit_expand('child_rcbd2.Rmd'))
 }
 ```
 
 `r paste(knit(text = out), collapse = '\n')`
+
+## Trait correlations
+
+## Variety candidate selection
+
+# Summary
+
+# References
+
+## Data sources
+
+## Literature
+
+
 
