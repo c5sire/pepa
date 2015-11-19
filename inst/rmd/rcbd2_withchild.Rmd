@@ -5,11 +5,11 @@ date: '`r format(Sys.time(), "%B %d, %Y, %H:%Mh")`'
 output: 
   html_document:
     toc: true
-    tod_depth: 3
+    toc_depth: 3
     theme: united
   pdf_document:
     toc: true
-    tod_depth: 3
+    toc_depth: 3
     highlight: zenburn
   word_document:
     toc: true
