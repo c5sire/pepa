@@ -12,7 +12,7 @@
 #' It also checks the assumptions.
 #' @return It returns an explanation about the RCBD fitted model.
 #' @examples
-#' pty.rcbd(c("trw", "vw", "crw"), "geno", "rep", pjpz09)
+#'# pty.rcbd(c("trw", "vw", "crw"), "geno", "rep", pjpz09)
 #' @export
 
 pty.rcbd <- function(traits, treat, rep, data, maxp = 0.1,

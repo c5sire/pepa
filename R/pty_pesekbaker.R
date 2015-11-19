@@ -40,7 +40,7 @@
 #' as \code{"actual"} or \code{"sdu"}.
 #' @return It returns an explanation about the Pesek-Baker index.
 #' @examples
-#' pty.pesekbaker(c("rytha", "bc", "dm", "star", "nocr"), "geno", "loc", "rep", spg)
+#' # pty.pesekbaker(c("rytha", "bc", "dm", "star", "nocr"), "geno", "loc", "rep", spg)
 #' @export
 
 pty.pesekbaker <- function(traits, geno, env, rep = NULL, data, means = "single",

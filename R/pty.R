@@ -10,7 +10,7 @@
 #' @return It returns an explanation about the selected R object.
 #' @examples
 #' # Pepa tells you something about a data frame:
-#' pty(pjpz09)
+#' # pty(pjpz09)
 #' @export
 
 pty <- function(x, author = "International Potato Center") {

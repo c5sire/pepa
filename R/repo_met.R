@@ -16,7 +16,7 @@
 #' factors while the blocks are considered as random and nested into the environments.
 #' @return It returns an automatic report about the MET with a RCBD fitted model.
 #' @examples
-#' repo.met("rytha", "geno", "env", "rep", megaclones)
+#' # repo.met("rytha", "geno", "env", "rep", megaclones)
 #' @export
 
 repo.met <- function(trait, geno, env, rep, data, maxp = 0.1,

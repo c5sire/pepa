@@ -15,7 +15,7 @@
 #' @return It returns a list of all rows with some kind of inconsistency and
 #' all rows with outliers.
 #' @examples
-#' pty.spconsis(pjpz09, 4.5)
+#' # pty.spconsis(pjpz09, 4.5)
 #' @export
 
 pty.spconsis <- function(data, plot.size, f = 3, author = "International Potato Center") {

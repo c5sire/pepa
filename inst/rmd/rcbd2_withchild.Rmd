@@ -9,6 +9,7 @@ output:
     theme: united
   pdf_document:
     toc: true
+    tod_depth: 3
     highlight: zenburn
   word_document:
     toc: true
@@ -57,12 +58,13 @@ Alternate formats:
 # Abstract
 ```{r , echo = FALSE, results='hide'}
  phs_lbl = "Advanced Trial"
- if (stringr::str_detect(meta$title, "PT")) {phs_lbl = "Preliminary Trial"}
- if (stringr::str_detect(meta$title, "OT")) {phs_lbl = "Observation Trial"}
+ ttl <- stringr::str_sub(meta$title, 1, 2)
+ if (stringr::str_detect(ttl, "PT")) {phs_lbl = "Preliminary Trial"}
+ if (stringr::str_detect(ttl, "OT")) {phs_lbl = "Observation Trial"}
  brp_lbl = "Yield Breeding Program"
 ```
 
-This sweetpotato trial has the identifier `r meta$title`. It was conducted under the supervion of `r meta$contact`  as a `r phs_lbl` as part of a `r brp_lbl` in `r meta$site`, `r meta$country` in `r meta$year`. A total of `r length(meta$materials)` clones (including reference clones) were evaluated for `r meta$variables` traits.
+This trial has the identifier `r meta$title`. It was conducted under the supervision of `r meta$contact`  as a `r phs_lbl` as part of a `r brp_lbl` in `r meta$site`, `r meta$country` in `r meta$year`. A total of `r length(meta$materials)` clones (including reference clones) were evaluated for `r meta$variables` traits.
 
 # Materials and Methods
 ## Location characterization
@@ -113,6 +115,9 @@ This report was created using `r s$R.version` on a `r s$platform` running `r s$r
 # exclude the response variable and empty variable for RF imputation
     datas <- names(data)[!names(data) %in% c(treat, "PED1")] # TODO replace "PED1" by a search
     x <- data[, datas]
+    for(i in 1:ncol(x)){
+      x[, i] <- as.numeric(x[, i])
+    }
     
     y <- data[, treat]
     if (any(is.na(x))){

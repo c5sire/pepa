@@ -27,7 +27,7 @@
 #' single arithmetic means are computed over all the observations for each genotype.
 #' @return It returns an explanation about the Elston index.
 #' @examples
-#' pty.elston(c("rytha", "bc", "dm", "star", "nocr"), "geno", data = spg)
+#' # pty.elston(c("rytha", "bc", "dm", "star", "nocr"), "geno", data = spg)
 #' @export
 
 pty.elston <- function(traits, geno, env = NULL, rep = NULL, data, means = "single",
