@@ -126,7 +126,7 @@ This report was created using `r s$R.version` on a `r s$platform` running `r s$r
       
     }
       names(data)[1] <- treat
-      lc <- st4gi::checkdata01(traits, treat, data)    
+      lc <- st4gi::checkdata01(traits, treat, rep, data)    
     
 ```
   
